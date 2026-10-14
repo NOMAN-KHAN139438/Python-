@@ -117,7 +117,7 @@ print(skills[:-5:-1])  # Output: ['CSS', 'HTML', 'JavaScript', 'C++']
 
 # ------------------------------------------------------
 
-# List Looping
+# 6. List Looping
 
 #-----------------------------------------------------
 
@@ -148,3 +148,43 @@ for index,  name in enumerate(names):
                                     #5 . Rasel                                    
 
 
+# -------------------------------------------------------------
+
+# 7.  LIST COMPREHENSION
+
+# -------------------------------------------------------------
+
+# List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list.
+# Structure: [expression for item in iterable if condition == True]
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+square = [x*x for x in numbers]
+minus = [x-1 for x in numbers if x > 2]
+
+print(square)  # Output: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+print(minus)  # Output: [2, 3, 4, 5, 6, 7, 8, 9]
+
+# EVEN 
+even = [x for x in numbers if x % 3 ==0]
+print(even)   # Output: [3, 6, 9]
+
+# ODD
+odd = [x for x in numbers if x % 2 !=0]
+print(odd)   # Output: [1, 3, 5, 7, 9]
+
+# Bigger than 5
+bigger = [x for x in numbers if x >5]
+print(bigger)   # Output: [6, 7, 8, 9, 10]
+
+# ----------------
+# List comprehension with if else statement
+# ----------------
+
+# RULES: [expression_if_true if condition else expression_if_false for item in iterable]
+
+even_odd = [f"{x} = Even" if x % 2 == 0 else f"{x} = Odd" for x in numbers]
+print(even_odd)   # OUTPUT : ['1 = Odd', '2 = Even', '3 = Odd', '4 = Even', '5 = Odd', '6 = Even', '7 = Odd', '8 = Even', '9 = Odd', '10 = Even']
+
+marks = [35, 75, 45, 90, 25, 60]
+results = [f"{x} = Pass" if x>= 50 else f"{x} = Fail" for x in marks]
+print(results)   # OUTPUT : ['35 = Fail', '75 = Pass', '45 = Fail', '90 = Pass', '25 = Fail', '60 = Pass']
