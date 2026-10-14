@@ -188,3 +188,26 @@ print(even_odd)   # OUTPUT : ['1 = Odd', '2 = Even', '3 = Odd', '4 = Even', '5 =
 marks = [35, 75, 45, 90, 25, 60]
 results = [f"{x} = Pass" if x>= 50 else f"{x} = Fail" for x in marks]
 print(results)   # OUTPUT : ['35 = Fail', '75 = Pass', '45 = Fail', '90 = Pass', '25 = Fail', '60 = Pass']
+
+# ----------------
+# LIST comprehension by using string
+# ----------------
+
+upper = [name.upper() for name in names if len(name)>4]
+print(upper)   # OUTPUT : ['SABBIR', 'NOMAN', 'SHUVO', 'RAHUL', 'RASEL']
+
+# ----------------
+# STRIING to list by using LIST comprehension
+# ----------------
+
+can = "Rahul"
+up = [x.upper() for x in can ]
+print(up)   # OUTPUT : ['R', 'A', 'H', 'U', 'L']
+
+nam = [x for x in can ]
+print(nam)   # OUTPUT : ['R', 'a', 'h', 'u', 'l']
+
+
+# NESTED LIST comprehension 
+
+
