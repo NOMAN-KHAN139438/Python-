@@ -207,7 +207,9 @@ print(up)   # OUTPUT : ['R', 'A', 'H', 'U', 'L']
 nam = [x for x in can ]
 print(nam)   # OUTPUT : ['R', 'a', 'h', 'u', 'l']
 
-
+# ----------------
 # NESTED LIST comprehension 
+# ----------------
+
 
 
