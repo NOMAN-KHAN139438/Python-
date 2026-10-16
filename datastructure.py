@@ -209,7 +209,5 @@ print(nam)   # OUTPUT : ['R', 'a', 'h', 'u', 'l']
 
 # ----------------
 # NESTED LIST comprehension 
-# ----------------
-
 
 
