@@ -73,3 +73,24 @@ print(empty_removed)  # output : ['Noman', 'Rahim', 'Sakib']
 prices = ["৳500", "N/A", "৳1,200", "", "৳800", "Unknown"]
 converted = [int(price.replace("৳", "").replace(",",""))for price in prices if price is not None and price != "" and price != "N/A" and price != "Unknown"]
 print (converted)
+
+nuembers = [5, 12, 7, 12, 20, 5, 30, 7, 40, 20, 15]
+duplicate_removed = []
+[duplicate_removed.append(x) for x in nuembers if x not in duplicate_removed and x>10]
+sort_duplicate = sorted(duplicate_removed)
+print(sort_duplicate) # output : [12, 15, 20, 30, 40]
+
+nuembers = [5, 12, 7, 12, 20, 5, 30, 7, 40, 20, 15]
+duplicate_removed = []
+[duplicate_removed.append(x) for x in nuembers if x>10]
+sort_duplicate = sorted(dict.fromkeys(duplicate_removed))
+print(sort_duplicate) # output : [12, 15, 20, 30, 40]
+
+data = [
+    [15, 5, 20, 15],
+    [30, 10, 25, 20],
+    [5, 35, 30, 40]
+]
+
+challange  = sorted(sorted(dict.fromkeys([x for nn in data for x in nn if x>10])))
+print(challange) # output : [15, 20, 25, 30, 35, 40]
