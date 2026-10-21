@@ -199,13 +199,15 @@ print(C|D)         # Output:  {1, 2, 3, 4, 5, 6}
 Aa = {1, 2, 3}
 Ab = {3, 4, 5}
 Ac = {5, 6, 7}
-print(Aa & Ab & Ac)           # Output :  set()
+print(Aa | Ab | Ac)           # Output :  {1, 2, 3, 4, 5, 6, 7}
 
 
 #A Task 19: Find all students enrolled in at least one of
 # the following courses.
-# python_students = {"Noman", "Rahim", "Sakib"}
-# java_students = {"Rahim", "Hasan", "Karim"}
+python_students = {"Noman", "Rahim", "Sakib"}
+java_students = {"Rahim", "Hasan", "Karim"}
+
+print(python_students|java_students)         # Output :  {'Rahim', 'Sakib', 'Karim', 'Hasan', 'Noman'}
 
 # Task 20: Calculate the union of A and B and store it in
 # a new variable named result.
@@ -213,6 +215,12 @@ print(Aa & Ab & Ac)           # Output :  set()
 # remain unchanged.
 # A = {10, 20, 30}
 # B = {30, 40, 50}
+
+df  = {10, 20, 30}
+dg  = {30, 40, 50}
+
+result = df | dg   
+print (result)    # Output : {50, 20, 40, 10, 30}
 
 
 # ============================================================
@@ -223,24 +231,53 @@ print(Aa & Ab & Ac)           # Output :  set()
 # A = {10, 20, 30, 40}
 # B = {30, 40, 50, 60}
 
+A = {10, 20, 30, 40}
+B = {30, 40, 50, 60}
+
+print(A.intersection(B))          # Output : {40, 30}
+
 # Task 22: Use the & operator to find the intersection.
 # A = {1, 2, 3, 4, 5}
 # B = {4, 5, 6, 7, 8}
+
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+print(A&B)          # Output : {4, 5}
+
 
 # Task 23: Find students who are enrolled in both Python
 # and Java courses.
 # python_students = {"Noman", "Rahim", "Sakib", "Rafi"}
 # java_students = {"Rahim", "Sakib", "Hasan"}
 
+
+python_students = {"Noman", "Rahim", "Sakib", "Rafi"}
+java_students = {"Rahim", "Sakib", "Hasan"}
+
+common_students = python_students & java_students
+print(common_students)       # Output : {'Sakib', 'Rahim'}
+
+
 # Task 24: Find the elements common to all three sets.
 # A = {10, 20, 30, 40, 50}
 # B = {20, 30, 40, 60}
 # C = {20, 30, 70}
 
+A = {10, 20, 30, 40, 50}
+B = {20, 30, 40, 60}
+C = {20, 30, 70}
+
+print(A&B&C)        # Output : {20, 30}
+
 # Task 25: Find the intersection of two sets with no common
 # elements. Print the result and its type.
 # A = {10, 20, 30}
 # B = {40, 50, 60}
+
+
+A = {10, 20, 30}
+B = {40, 50, 60}
+print(A&B)               # Output: set()
 
 
 # ============================================================
