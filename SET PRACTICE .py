@@ -127,14 +127,25 @@ print(nnnumbers)            # Output:   {1, 2, 3, 4, 5, 6, 7}
 
 # Task 11: Remove the integer 30 using remove().
 # numbers = {10, 20, 30, 40, 50}
+numbersss = {10, 20, 30, 40, 50}
+numbersss.remove(30)
+print(numbersss) # output : {50, 20, 40, 10}
 
 # Task 12: Attempt to remove the integer 100 from a set that
 # does not contain it. Observe the exception.
 # numbers = {10, 20, 30}
 
+nuummbers = {10, 20, 30}
+#nuummbers.remove(100)
+#print(nuummbers)   # Output: KeyError: 100
+
 # Task 13: Use discard() to remove the integer 100 from a set
 # that does not contain it. Check whether an exception occurs.
 # numbers = {10, 20, 30}
+
+nnummbers = {10, 20, 30}
+nnummbers.discard(100)
+print(nnummbers)            # Output: {10, 20, 30}
 
 # Task 14: Use pop() to remove one element from a set.
 # Store the removed element in a variable.
@@ -142,9 +153,20 @@ print(nnnumbers)            # Output:   {1, 2, 3, 4, 5, 6, 7}
 # Explain why you cannot predict which element will be removed.
 # numbers = {10, 20, 30, 40}
 
+nnumbeers = {10, 20, 30, 40}
+nm = nnumbeers.pop()
+print(nm)                # Output: 40
+print(nnumbeers)         # Output: {10, 20, 30}
+""" Explaination - Pop in set means it can remove any element from set .. and we cant decide to which one can be the removed ...  
+thats why its un predictable wich elemet gonna removed.."""
+
 # Task 15: Use clear() to remove every element from a set.
 # Print the resulting set and its type.
 # skills = {"Python", "AutoCAD", "3ds Max"}
+
+skills = {"Python", "AutoCAD", "3ds Max"}
+skills.clear()
+print(skills)          # Output:   set()
 
 
 # ============================================================
@@ -155,9 +177,18 @@ print(nnnumbers)            # Output:   {1, 2, 3, 4, 5, 6, 7}
 # A = {10, 20, 30}
 # B = {30, 40, 50}
 
+A = {10, 20, 30}
+B = {30, 40, 50}
+
+print(A.union(B))         # Output:  {50, 20, 40, 10, 30}
+
 # Task 17: Use the | operator to calculate the union.
 # A = {1, 2, 3, 4}
 # B = {3, 4, 5, 6}
+
+D = {1, 2, 3, 4}
+C = {3, 4, 5, 6}
+print(C|D)         # Output:  {1, 2, 3, 4, 5, 6}
 
 # Task 18: Combine three sets into one set containing all
 # unique elements.
@@ -165,7 +196,13 @@ print(nnnumbers)            # Output:   {1, 2, 3, 4, 5, 6, 7}
 # B = {3, 4, 5}
 # C = {5, 6, 7}
 
-# Task 19: Find all students enrolled in at least one of
+Aa = {1, 2, 3}
+Ab = {3, 4, 5}
+Ac = {5, 6, 7}
+print(Aa & Ab & Ac)           # Output :  set()
+
+
+#A Task 19: Find all students enrolled in at least one of
 # the following courses.
 # python_students = {"Noman", "Rahim", "Sakib"}
 # java_students = {"Rahim", "Hasan", "Karim"}
