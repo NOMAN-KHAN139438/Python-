@@ -42,7 +42,7 @@ print(new_numbers)        # Output : {40, 10, 50, 20, 30}
 empty = {}
 print(type(empty))  # Output: <class 'dict'>
 
-empty_set = set(empty)
+empty_set = set()
 print(type(empty_set))  # Output: <class 'set'>
 
 
@@ -229,10 +229,12 @@ print(python_students|java_students)         # Output :  {'Rahim', 'Sakib', 'Kar
 # A = {10, 20, 30}
 # B = {30, 40, 50}
 
-df  = {10, 20, 30}
-dg  = {30, 40, 50}
+A = {10, 20, 30}
+B = {30, 40, 50}
 
-result = df | dg   
+result = A | B   
+print (A) 
+print (B) 
 print (result)    # Output : {50, 20, 40, 10, 30}
 
 
@@ -348,7 +350,7 @@ print(python_students-java_students)               # Output:{'Rafi', 'Noman'}
 A = {1, 2, 3, 4, 5, 6, 7}
 B = {2, 4, 6}
 C = {1, 3, 5}
-print((A-B)-B)               # Output:{1, 3, 5, 7}
+print((A-B)-C)               # Output:{1, 3, 5, 7}
 
 # ============================================================
 # SECTION 07: SYMMETRIC DIFFERENCE
@@ -416,6 +418,8 @@ A = {10, 20, 30, 40}
 B = {30, 40, 50, 60}
 print(A^B)               # Output:  {10, 50, 20, 60}
 print(A|B)               # Output:  {40, 10, 50, 20, 60, 30}
+
+''' Explaination - {10, 50, 20, 60} those elements appear both in the symmetric difference & union. {30, 40} appeares only in union.'''
 
 
 
@@ -571,7 +575,7 @@ for s in skills:
 # numbers = [5, 10, 15, 20, 25, 30, 35, 40]
 
 numbers = [5, 10, 15, 20, 25, 30, 35, 40]
-n = (x for x in numbers if x>20 )      
+n = {x for x in numbers if x>20}      
 print(n)               # Output:    <generator object <genexpr> at 0x00000127F9596110>
 
 
@@ -580,7 +584,7 @@ print(n)               # Output:    <generator object <genexpr> at 0x00000127F95
 # numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-n = (x*x for x in numbers if x%2 == 0  )       
+n = {x*x for x in numbers if x%2 == 0}      
 print(n)                             # Output:   <generator object <genexpr> at 0x00000127F9596180>
  
 
@@ -634,7 +638,7 @@ print(result)                                      # Output: [4000, 2500, 3500, 
 print(len(result))                                # Output: 5
 
 # 7. Convert the filtered prices into a sorted list.
-sorteed_list = result.sort()
+sorteed_list = sorted(result)
 
 # 8. Print the sorted list.
 print(sorteed_list)                               # Output:     None
