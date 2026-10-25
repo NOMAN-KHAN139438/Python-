@@ -119,6 +119,19 @@ print(nnnumbers)            # Output:   {1, 2, 3, 4, 5, 6, 7}
 # Use add() to insert one element and update() to insert multiple
 # elements. Print the results and explain the difference.
 
+num = {1, 2, 3, 4, 5, 6, 7}
+num.add(22)
+print(num)               # Output:    {1, 2, 3, 4, 5, 6, 7, 22}   
+num.update([22,33])
+print(num)                # Output:   {1, 2, 3, 4, 5, 6, 7, 22, 33}
+
+'''
+EXPLAINATION - add() in sets use for add one element in a set.
+               update() in sets use for add more than one object.
+               when we use update()  
+
+'''
+
 
 # ============================================================
 # SECTION 03: REMOVING ELEMENTS
@@ -277,7 +290,9 @@ print(A&B&C)        # Output : {20, 30}
 
 A = {10, 20, 30}
 B = {40, 50, 60}
-print(A&B)               # Output: set()
+result = (A&B)              
+print(result)          
+print(type(result))            # Output: set()
 
 
 # ============================================================
@@ -288,18 +303,40 @@ print(A&B)               # Output: set()
 # A = {10, 20, 30, 40, 50}
 # B = {30, 40, 50, 60, 70}
 
+
+A = {10, 20, 30, 40, 50}
+B = {30, 40, 50, 60, 70}
+print(A-B)               # Output: {10, 20}
+
+
 # Task 27: Find the elements present in B but not in A.
 # Use the same sets from Task 26.
 # Explain why the result differs from A - B.
+
+A = {10, 20, 30, 40, 50}
+B = {30, 40, 50, 60, 70}
+print(B-A)               # Output: {60, 70}
+"""Explaination - (B-A) means elements present in B but not in A. (A-B) means elements present in A but not in B"""
 
 # Task 28: Use difference() to find programming languages
 # present in A but not in B.
 # A = {"Python", "Java", "C++", "JavaScript"}
 # B = {"Java", "JavaScript"}
 
+A = {"Python", "Java", "C++", "JavaScript"}
+B = {"Java", "JavaScript"}
+print(A.difference(B))               # Output:{'Python', 'C++'}
+
+
+
 # Task 29: Find students who study Python but do not study Java.
 # python_students = {"Noman", "Rahim", "Sakib", "Rafi"}
 # java_students = {"Rahim", "Hasan", "Sakib"}
+
+python_students = {"Noman", "Rahim", "Sakib", "Rafi"}
+java_students = {"Rahim", "Hasan", "Sakib"}
+print(python_students-java_students)               # Output:{'Rafi', 'Noman'}
+
 
 # Task 30: Find the elements that remain in A after removing
 # every element present in either B or C.
@@ -307,6 +344,11 @@ print(A&B)               # Output: set()
 # B = {2, 4, 6}
 # C = {1, 3, 5}
 
+
+A = {1, 2, 3, 4, 5, 6, 7}
+B = {2, 4, 6}
+C = {1, 3, 5}
+print((A-B)-B)               # Output:{1, 3, 5, 7}
 
 # ============================================================
 # SECTION 07: SYMMETRIC DIFFERENCE
@@ -317,14 +359,34 @@ print(A&B)               # Output: set()
 # A = {10, 20, 30, 40}
 # B = {30, 40, 50, 60}
 
+
+A = {10, 20, 30, 40}
+B = {30, 40, 50, 60}
+
+print(A.symmetric_difference(B))               # Output:  {10, 50, 20, 60}
+
+
 # Task 32: Solve Task 31 using the ^ operator.
 # A = {1, 2, 3, 4, 5}
 # B = {4, 5, 6, 7, 8}
+
+
+A = {1, 2, 3, 4, 5}
+B = {4, 5, 6, 7, 8}
+print(A^B)               # Output:  {1, 2, 3, 6, 7, 8}
+
 
 # Task 33: Find students who study either Python or Java,
 # but not both.
 # python_students = {"Noman", "Rahim", "Sakib"}
 # java_students = {"Rahim", "Hasan", "Karim"}
+
+
+python_students = {"Noman", "Rahim", "Sakib"}
+java_students = {"Rahim", "Hasan", "Karim"}
+print(python_students^java_students)               # Output:  {'Noman', 'Hasan', 'Karim', 'Sakib'}
+
+
 
 # Task 34: Calculate the symmetric difference of A and B.
 # Then calculate the symmetric difference of that result and C.
@@ -333,11 +395,28 @@ print(A&B)               # Output: set()
 # C = {3, 4, 5}
 # Check whether changing the grouping changes the result.
 
+
+A = {1, 2, 3}
+B = {2, 3, 4}
+C = {3, 4, 5}
+D = A^B
+E= D^C
+
+print(D)        # Output:  {1, 4}
+print(E)        # Output:  {1, 3, 5}
+
+
 # Task 35: Calculate both the union and symmetric difference
 # of A and B. Explain which elements appear in both results
 # and which elements appear only in the union.
 # A = {10, 20, 30, 40}
 # B = {30, 40, 50, 60}
+
+A = {10, 20, 30, 40}
+B = {30, 40, 50, 60}
+print(A^B)               # Output:  {10, 50, 20, 60}
+print(A|B)               # Output:  {40, 10, 50, 20, 60, 30}
+
 
 
 # ============================================================
@@ -348,31 +427,79 @@ print(A&B)               # Output: set()
 # A = {10, 20}
 # B = {10, 20, 30, 40}
 
+
+A = {10, 20}
+B = {10, 20, 30, 40}
+print(A.issubset(B))        # Output: True
+
 # Task 37: Use issuperset() to check whether B is a superset of A.
 # Use the same sets from Task 36.
+
+
+A = {10, 20}
+B = {10, 20, 30, 40}
+print(B.issuperset(A))        # Output: True
+
+
 
 # Task 38: Use isdisjoint() to check whether the sets have
 # any common elements.
 # A = {1, 2, 3}
 # B = {4, 5, 6}
 
+
+A = {1, 2, 3}
+B = {4, 5, 6}
+print(A.isdisjoint(B))       
+
+
 # Task 39: Check all four relationships and print the results.
 # A = {10, 20}
 # B = {10, 20, 30}
 # C = {10, 20, 30, 40}
+
+A = {10, 20}
+B = {10, 20, 30}
+C = {10, 20, 30, 40}
+
+
 # 1. Is A a subset of B?
+
+print(A.issubset(B))                  # Output: True
+
 # 2. Is B a subset of C?
+
+print(B.issubset(C))                  # Output: True
+
 # 3. Is C a superset of A?
+
+print(C.issuperset(A))                # Output: True
+
 # 4. Are A and C disjoint?
+
+print(A.isdisjoint(C))                # Output: False
+
 
 # Task 40: Compare the skill sets of three developers.
 # noman_skills = {"Python", "SQL", "Git"}
 # rahim_skills = {"Python", "SQL", "Git", "Docker"}
 # sakib_skills = {"AutoCAD", "3ds Max"}
-# Determine:
-# 1. Whether Noman's skills are a subset of Rahim's skills.
-# 2. Whether Rahim's skills are a superset of Noman's skills.
-# 3. Whether Noman's and Sakib's skill sets are disjoint.
+
+noman_skills = {"Python", "SQL", "Git"}
+rahim_skills = {"Python", "SQL", "Git", "Docker"}
+sakib_skills = {"AutoCAD", "3ds Max"}# Determine:
+
+# 1. Whether Noman's skills are a subset of Rahim's skills.    # Output: True
+
+print(noman_skills.issubset(rahim_skills))
+
+# 2. Whether Rahim's skills are a superset of Noman's skills.      # Output: True
+
+print(rahim_skills.issuperset(noman_skills))
+
+# 3. Whether Noman's and Sakib's skill sets are disjoint.        # Output: True
+
+print(noman_skills.isdisjoint(sakib_skills))
 
 
 # ============================================================
@@ -382,21 +509,43 @@ print(A&B)               # Output: set()
 # Task 41: Remove duplicates from the list using a set.
 # numbers = [5, 10, 5, 15, 10, 20, 25, 20]
 
+numbers = [5, 10, 5, 15, 10, 20, 25, 20]
+print(list(set(numbers)))         # Output: [5, 10, 15, 20, 25]
+
 # Task 42: Find the number of unique product IDs.
 # product_ids = [
 #     "A101", "A102", "A101",
 #     "A103", "A102", "A104", "A103"
 # ]
 
+product_ids = [
+    "A101", "A102", "A101",
+    "A103", "A102", "A104", "A103"
+] 
+print(list(set(product_ids)))           # Output:      ['A104', 'A101', 'A102', 'A103']
+
 # Task 43: Find products available on both websites.
 # website_a = {"Fan", "Light", "Chair", "Table"}
 # website_b = {"Chair", "Table", "Laptop", "Mouse"}
 
+website_a = {"Fan", "Light", "Chair", "Table"}
+website_b = {"Chair", "Table", "Laptop", "Mouse"}
+
+print(website_a | website_b)           # Output:      {'Chair', 'Table', 'Light', 'Fan', 'Mouse', 'Laptop'}
+
+
 # Task 44: Select numbers greater than 10 and remove duplicates.
 # numbers = [5, 12, 7, 12, 20, 5, 30, 7, 40, 20, 15]
 
+numbers = [5, 12, 7, 12, 20, 5, 30, 7, 40, 20, 15]
+print(list(set(x for x in numbers if x>10)))            # Output: [40, 12, 15, 20, 30]
+
 # Task 45: Remove duplicates while preserving the original order.
 # numbers = [10, 20, 10, 30, 20, 40, 30, 50]
+
+numbers = [10, 20, 10, 30, 20, 40, 30, 50]
+print(list(dict.fromkeys(numbers)))                 # Output:   [10, 20, 30, 40, 50]
+
 # Do not use list(set(numbers)), because it does not guarantee
 # preservation of the original order.
 
@@ -409,20 +558,44 @@ print(A&B)               # Output: set()
 # "My Skill: ".
 # skills = {"Python", "SQL", "Git", "Playwright"}
 
+skills = {"Python", "SQL", "Git", "Playwright"}
+for s in skills:
+    print(s)               # Output:   Python
+                                       #Playwright
+                                       #SQL
+                                       #Git
+
+
 # Task 47: Use set comprehension to create a set containing
 # only numbers greater than 20.
 # numbers = [5, 10, 15, 20, 25, 30, 35, 40]
+
+numbers = [5, 10, 15, 20, 25, 30, 35, 40]
+n = (x for x in numbers if x>20 )      
+print(n)               # Output:    <generator object <genexpr> at 0x00000127F9596110>
+
 
 # Task 48: Use set comprehension to create a set of squares
 # of all even numbers from 1 through 10.
 # numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+n = (x*x for x in numbers if x%2 == 0  )       
+print(n)                             # Output:   <generator object <genexpr> at 0x00000127F9596180>
+ 
+
 # Task 49: Explain and test the following expressions.
 # numbers = {10, 20, 30}
-#
+numbers = {10, 20, 30}
+
 # A. numbers[0]
+#A = numbers[0]
+# print(A)                           # Output:   TypeError: 'set' object is not subscriptable
 # B. list(numbers)[0]
-#
+B = list(numbers)[0]
+print(B)             # Output: 10
+
+
 # Determine which expression raises an exception.
 # Explain why the second expression's value is not guaranteed
 # to be 10.
@@ -433,18 +606,44 @@ print(A&B)               # Output: set()
 #     1500, 2500, 3000, 2000, 3500,
 #     1000, 2500, 4000
 # ]
-#
+
+prices = [
+    1200, 1500, 1200, 2000, 1800,
+    1500, 2500, 3000, 2000, 3500,
+    1000, 2500, 4000
+]
+
+
+
 # Requirements:
 # 1. Remove duplicate prices using a set.
+unique_prices = set(prices)
 # 2. Select prices greater than or equal to 2000.
+filter = []
+[filter.append(x) for x in unique_prices if x >= 2000]
 # 3. Ensure that the filtered result contains no duplicates.
+result = []
+[result.append(x) for x in filter if x not in result]
 # 4. Print the set of all unique prices.
+print(unique_prices)                             # Output: {4000, 2500, 1800, 1000, 3500, 1200, 2000, 3000, 1500}
+
 # 5. Print the filtered set.
+print(result)                                      # Output: [4000, 2500, 3500, 2000, 3000]
+
 # 6. Print the number of filtered prices.
+print(len(result))                                # Output: 5
+
 # 7. Convert the filtered prices into a sorted list.
+sorteed_list = result.sort()
+
 # 8. Print the sorted list.
+print(sorteed_list)                               # Output:     None
 
 
 # ============================================================
 # END OF PROJECT
 # ============================================================
+
+#  Task 10, 20, 25, 30, 34, 35, 42, 43, 46, 47, 48, 49, 50।
+
+
