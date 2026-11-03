@@ -71,10 +71,14 @@ student = {
     "department": "AI Engineering"
 }
 
-
+student.update({
+    "city": "Dahak"
+})
 # Write your solution below:
-
-
+student.update({
+    "city": "Dahak"
+})
+print(student)          # Output :  {'name': 'Noman', 'age': 24, 'department': 'AI Engineering', 'city': 'Dahak'}
 
 # Task 05: Remove a Key
 # Remove the "city" key from the dictionary below.
@@ -88,8 +92,8 @@ person = {
 
 # Write your solution below:
 
-
-
+person.pop("city")
+print(person)          # Output :  {'name': 'Noman', 'age': 24, 'country': 'Bangladesh'}
 
 # ============================================================
 # LEVEL 2: INTERMEDIATE
@@ -108,7 +112,7 @@ student = {
 
 
 # Write your solution below:
-
+print("email" in student)         # Output :  False
 
 
 # Task 07: Use the get() Method
@@ -123,7 +127,8 @@ employee = {
 
 
 # Write your solution below:
-
+print(employee.get("salary"))        # Output :  20000
+print(employee.get("bonus", 0))       # Output :  0
 
 
 # Task 08: Loop Through a Dictionary
@@ -142,7 +147,14 @@ skills = {
 
 # Write your solution below:
 
+for skill, level in skills.items():
+    print(f"{skill} : {level}")
 
+# Output :
+#Python : Beginner
+#AutoCAD : Intermediate
+#3ds Max : Intermediate
+#Playwright : Beginner
 
 # Task 09: Count Dictionary Items Without len()
 # Use a loop to count the number of key-value pairs.
@@ -159,7 +171,10 @@ data = {
 
 
 # Write your solution below:
-
+count = 0 
+for key in data:
+    count += 1 
+print(f"Total items: {count}")  # Output :  Total items: 5
 
 
 # Task 10: Calculate Total and Average Marks
@@ -175,7 +190,12 @@ marks = {
 
 
 # Write your solution below:
-
+total = 0 
+for key, value in marks.items():
+    total += value 
+average = total / len( marks)    
+print(total)                # Output : 330
+print(average)              # Output : 82.5
 
 
 
@@ -198,7 +218,10 @@ marks = {
 
 # Write your solution below:
 
-
+for subject, mark in marks.items():
+   if mark == max(marks.values()):
+       print(f"Highest subject: {subject}")         # Output :      Highest subject: English
+       print(f"Highest marks: {mark}")              # Output :     Highest marks: 95
 
 # Task 12: Filter Dictionary Values
 # Create a new dictionary containing only students who scored
@@ -216,6 +239,13 @@ students = {
 
 # Write your solution below:
 
+for student, marks in students.items():
+    if marks >= 80:
+        print(f"{student}: {marks}")   
+                            # Output : 
+                            #Noman: 85
+                            #Karim: 92
+                            #Hasan: 88
 
 
 # Task 13: Count Character Frequency
@@ -227,8 +257,11 @@ text = "banana"
 
 
 # Write your solution below:
-
-
+result = {}
+for i in text:
+    num = text.count(i)
+    result[i] = num
+print(result)  # Output : {'b': 1, 'a': 3, 'n': 2}
 
 # Task 14: Merge Two Dictionaries
 # Merge dict1 and dict2 into a new dictionary.
@@ -247,7 +280,8 @@ dict2 = {
 
 # Write your solution below:
 
-
+merged = {**dict1, **dict2}
+print(merged)     #output : {'Python': 90, 'SQL': 80, 'Excel': 85, 'Power BI': 88}
 
 # Task 15: Invert a Dictionary
 # Create a new dictionary where each original value becomes a key
@@ -264,7 +298,10 @@ original = {
 
 # Write your solution below:
 
-
+inverted = {}
+for key, values in original.items():
+    inverted[values] = key 
+print(inverted)   # Output : {1: 'a', 2: 'b', 3: 'c'}
 
 
 # ============================================================
