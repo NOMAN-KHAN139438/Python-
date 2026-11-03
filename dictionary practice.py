@@ -325,6 +325,12 @@ data = {
 
 # Write your solution below:
 
+result = {}
+for value in data.values():
+    num = list(data.values()).count(value)
+    if num>1:
+        result[value] = num
+print(result)  # Output : {10: 2, 20: 2}
 
 
 # Task 17: Work with a Nested Dictionary
@@ -353,6 +359,26 @@ students = {
 
 # Write your solution below:
 
+for student in students.values():
+    if student["name"]=="Rahim":
+        print(student["marks"])      # Output :   92
+    
+for student in students.values():
+    if student["name"]=="Noman":
+        print(student["age"])        # Output :   24
+    print(student["name"])           # Output :   Noman
+                                                # Rahim
+                                                # Karim
+
+highest = 0
+topper = ""
+for student in students.values():
+    if student["marks"]>highest:
+        highest = student["marks"]
+        topper = student["name"]
+print(highest)                       # Output :   92
+print(topper)                        # Output :   Rahim
+
 
 
 # Task 18: Group Students by Department
@@ -374,7 +400,16 @@ students = [
 
 # Write your solution below:
 
+result = {}
 
+for student in students:
+    department = student["department"]
+    name = student["name"]
+    if department not in result:
+        result[department] = []
+    result[department].append(name)
+print(result)
+        
 
 # Task 19: Update Store Inventory
 # A customer buys:
@@ -395,7 +430,36 @@ inventory = {
 
 # Write your solution below:
 
+purchase = {
+    "laptop": 2,
+    "mouse": 2,
+    "keyboard": 3
+}
 
+for item, quantity in purchase.items():
+    inventory[item] -= quantity
+print(inventory)                   # Output : {'laptop': 8, 'mouse': 23, 'keyboard': 12}
+
+# BONUS 
+# ___________
+
+new = inventory
+
+purchase = {
+    "laptop": 2,
+    "mouse": 2,
+    "keyboard": 3
+}
+
+for item, quantity in purchase.items():
+    if quantity> inventory[item]:
+        print("Insufficient stock")
+        break
+else : 
+        print(f"Purchase succesful. Now available: \n {inventory}")
+# Output :
+#Purchase succesful. Now available: 
+# {'laptop': 8, 'mouse': 23, 'keyboard': 12}
 
 # Task 20: Mini Project — Student Result Management System
 # Start with the dictionary below and build a program that can:
@@ -422,3 +486,49 @@ students = {
 
 
 # Write your solution below:
+
+highest = 0
+lowest = 0
+num = 0
+for name, marks in students.items():
+    print(name, ":", marks)
+    
+    if marks > highest:
+        highest = marks
+
+    
+
+    num+=1
+count_student = num
+print(highest)
+
+print("Total Student: ",count_student)
+
+
+for name, marks in students.items():
+    if marks < lowest:
+        lowest = marks
+
+print(lowest)
+
+num = 0
+total = 0
+for name, marks in students.items():
+
+    total += marks
+    num +=1
+average = total/num
+print(average)
+
+passed = {name for name, marks in students.items() if marks>= 80 }
+fail = {name for name, marks in students.items() if marks< 50 }
+print(passed)
+print(fail)
+
+students["Pappu"] = 80
+
+
+students.update({"Noman": 99})
+students.pop("Sakib")
+
+print(students)
