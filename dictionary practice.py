@@ -71,14 +71,15 @@ student = {
     "department": "AI Engineering"
 }
 
-student.update({
-    "city": "Dahak"
-})
 # Write your solution below:
+
 student.update({
-    "city": "Dahak"
+    "city": "Dhaka"
 })
-print(student)          # Output :  {'name': 'Noman', 'age': 24, 'department': 'AI Engineering', 'city': 'Dahak'}
+student.update({
+    "age": 25
+})
+print(student)          # Output :  {'name': 'Noman', 'age': 25, 'department': 'AI Engineering', 'city': 'Dhaka'}
 
 # Task 05: Remove a Key
 # Remove the "city" key from the dictionary below.
@@ -239,13 +240,11 @@ students = {
 
 # Write your solution below:
 
+result = {}
 for student, marks in students.items():
     if marks >= 80:
-        print(f"{student}: {marks}")   
-                            # Output : 
-                            #Noman: 85
-                            #Karim: 92
-                            #Hasan: 88
+        result[student] = marks 
+print(result) # Output : {'Noman': 85, 'Karim': 92, 'Hasan': 88}
 
 
 # Task 13: Count Character Frequency
@@ -432,7 +431,7 @@ inventory = {
 
 purchase = {
     "laptop": 2,
-    "mouse": 2,
+    "mouse": 5,
     "keyboard": 3
 }
 
@@ -452,11 +451,11 @@ purchase = {
 }
 
 for item, quantity in purchase.items():
-    if quantity> inventory[item]:
+    if quantity> new[item]:
         print("Insufficient stock")
         break
 else : 
-        print(f"Purchase succesful. Now available: \n {inventory}")
+        print(f"Purchase succesful. Now available: \n {new}")
 # Output :
 #Purchase succesful. Now available: 
 # {'laptop': 8, 'mouse': 23, 'keyboard': 12}
@@ -488,7 +487,7 @@ students = {
 # Write your solution below:
 
 highest = 0
-lowest = 0
+lowest = float('inf')
 num = 0
 for name, marks in students.items():
     print(name, ":", marks)
