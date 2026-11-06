@@ -174,6 +174,18 @@ data = {
 
 # Write your solution below:
 
+frequency = {} 
+for value in data.values():
+    if value in frequency:
+        frequency[value] += 1
+    else:
+        frequency[value]= 1
+
+
+
+most_frequent = max(frequency, key= frequency.get)
+print("Most frequent : ", most_frequent)
+print("frequency: ", frequency)
 
 
 # ============================================================
@@ -203,6 +215,13 @@ products = {
 
 # Write your solution below:
 
+new = {}
+sorted_values = list(sorted(products.values(), reverse = True))
+for value in sorted_values:
+    for key, item in products.items():
+        if item  ==  value:
+            new[key] = value
+print(new)
 
 
 # ============================================================
@@ -225,6 +244,9 @@ employees = {
 
 # Write your solution below:
 
+for emp, det in employees.items():
+    sorted_values = list(sorted(det["salary"], reverse = True))
+print(sorted_values)
 
 
 # ============================================================
